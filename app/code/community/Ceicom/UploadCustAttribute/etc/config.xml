@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+  <modules>
+    <Ceicom_UploadCustAttribute>
+      <version>1.0.0</version>
+    </Ceicom_UploadCustAttribute>
+  </modules>
+    <global>
+        <resources>
+            <uploadcustattribute_setup>
+                <setup>
+                    <module>Ceicom_UploadCustAttribute</module>
+                    <class>Ceicom_UploadCustAttribute_Model_Mysql4</class>
+                </setup>                
+            </uploadcustattribute_setup>
+        </resources>
+          <helpers>
+            <uploadcustattribute>
+                <class>Ceicom_UploadCustAttribute_Helper</class>
+            </uploadcustattribute>
+        </helpers>
+    </global>
+
+    <frontend>
+        <routers>
+            <uploadcustattribute>
+                <use>standard</use>
+                <args>
+                    <module>Ceicom_UploadCustAttribute</module>
+                    <frontName>profile</frontName>
+                </args>
+            </uploadcustattribute>
+        </routers>
+
+        <layout>
+            <updates>
+                <uploadcustattribute>
+                    <file>uploadcustattribute.xml</file>
+                </uploadcustattribute>
+            </updates>
+        </layout>
+    </frontend>
+</config>

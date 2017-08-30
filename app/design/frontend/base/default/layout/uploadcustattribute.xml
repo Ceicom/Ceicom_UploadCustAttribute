@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<layout>
+    <default>
+        
+    </default>
+
+    <customer_account>
+        <reference name="customer_account_navigation">
+            <action method="addLink" translate="label" module="uploadcustattribute">
+                <name>uploadcustattribute</name>                
+                <path>profile/arquivo/index/</path>
+                <label>Arquivo Upload</label>
+				<position>2</position>
+            </action>
+        </reference>
+    </customer_account>    
+
+     <profile_arquivo_index translate="label">
+        <update handle="customer_account"/>
+        <reference name="content">
+            <block type="core/template" name="uploadcustattribute" template="uploadcustattribute/arquivo.phtml" />
+        </reference>
+    </profile_arquivo_index> 
+    
+</layout>

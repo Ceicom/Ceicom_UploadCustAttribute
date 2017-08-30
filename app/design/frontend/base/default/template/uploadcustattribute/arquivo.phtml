@@ -1,0 +1,78 @@
+<?php 
+/**
+ *
+ * @category   Ceicom
+ * @package    Ceicom_UploadCustAttribute
+ * @author     Suporte <suporte@ceicom.com.br>
+ * @website    http://www.ceicom.com.br
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+ ?>
+<div class="my-account">
+	<div class="page-title">
+	    <h1><?php echo $this->__('Arquivo Upload') ?></h1>
+	</div>
+	<div id="messages_product_view"><?php echo $this->getMessagesBlock()->getGroupedHtml() ?></div>
+	<div class="box-account box-info">
+	   <div class="col2-set">
+		   
+	        <div class="col-1">
+		        <div class="box">
+		            <div class="box-title">
+		                <h3>Meu Arquivo</h3>     	                    
+		            </div>
+		            <div class="box-content">
+						<?php 
+						$customer = Mage::getSingleton('customer/session')->getCustomer();
+						$downarquivo = $customer->getupload_customer();
+						?>
+
+						<?php  if($downarquivo): ?>
+	                        <?php $arquivo = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) .'customer'. $downarquivo ?>
+	                        <ul class="messages">
+								<li>
+			                        <span>
+			                            <a href="<?php echo $arquivo; ?>" target="_blank"><img alt="Download" title="Download" src="/skin/adminhtml/default/default/images/fam_bullet_disk.gif" class="v-middle"></a> 
+			                            <a href="<?php echo $arquivo; ?>" target="_blank" style="color: #3399cc;font-size: 15px;top: -3px;position: relative;">Download</a>
+			                        </span>
+		                        </li>
+	                        </ul>
+	                    <?php else:  ?>
+	                    	<ul class="messages"><li class="warning-msg"><span>Você não tem Arquivo</span></li></ul>
+	                    <?php endif  ?>
+
+		            </div>
+		        </div>
+	        </div>
+
+	         <div class="col-2">
+		        <div class="box">
+		            <div class="box-title">
+		                <h3>Anexar novo Arquivo</h3>               
+		            </div>
+		              	<div class="box-content">
+								<form action="<?php echo Mage::helper('uploadcustattribute')->getUploadUrl() ?>" method="post" enctype="multipart/form-data">
+								    <div class="fieldset">  							       
+								        <ul class="form-list">
+								            <li> 
+								                <input type="file" name="upload_customer" id="file" required><br>
+								            </li>
+								            <li>
+								                <button type ="submit" name="submit" title="upload" class="button">
+								                    <span><span><?php echo $this->__('Enviar Arquivo') ?></span></span>
+								                </button>
+								            </li>
+												
+								        </ul>
+								    </div>
+								</form>
+	            		</div>	            
+		        </div>
+		    </div>
+
+	    </div>
+	</div>
+	<div class="buttons-set">
+	    <p class="back-link"><a href="<?php echo $this->getUrl('customer/account/') ?>"><small>&laquo; </small><?php echo $this->__('Voltar') ?></a></p>
+	</div>
+</div>
