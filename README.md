@@ -27,7 +27,7 @@
 ## Authors
 
 * **Jonatan Machado* - *Initial work* - [Git Jonatan](https://github.com/JonatanM)
-* **Ceicom* - [ceicom.com.br](https://ceicom.com.br/)
+* **Ceicom* - [ceicom.com.br](http://www.ceicom.com.br/)
 
 ## License
 
